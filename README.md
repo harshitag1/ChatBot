@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ChatBot
 
-## Getting Started
+This is an OpenAI powered ChatBot that utilizes the recently added function parameter. The chatbot is capable of providing current weather information and performing other tasks typical of ChatGPT.
 
-First, run the development server:
+## Deployment
+The project has been deployed and can be accessed [here](https://chat-bot-alpha-vert.vercel.app/).
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Project Description
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The project code provided is written in React and uses the `usellm` library to interact with the ChatGPT API. It enables users to have interactive conversations with the chatbot.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Features
+- The chatbot is powered by the ChatGPT API and developed using the `useLLM` library.
+- Users can ask the chatbot any questions or engage in a conversation.
+- The chatbot can provide the current weather in a given location by utilizing the `get_current_weather` function.
+- The project includes functionality to record and transcribe audio input for text-based conversations.
+- The chatbot UI updates in real-time as the conversation progresses.
+- The project utilizes the OpenAI API to create chat completions and handle function calls.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Code Overview
+- The project imports necessary libraries such as `react`, `usellm`, and `openai`.
+- An API key for the OpenAI service is required and passed to the `OpenAIApi` object.
+- The main component `AIChatBot` is defined, which manages the chatbot's state and handles user interactions.
+- The `handleSend` function is responsible for sending user input to the chatbot and receiving responses.
+- The `handleRecordClick` function handles the recording and transcribing of audio input for the chatbot.
+- The UI is divided into a message window and an input section.
+- The `Message` component is responsible for rendering individual chat messages, including function responses.
+- The `getCurrentWeather` function is used to retrieve the current weather information from an external API.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Please refer to the provided code for a more detailed understanding of the implementation.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For more information about the function parameter, refer to the [OpenAI API reference](https://platform.openai.com/docs/api-reference/chat/create#chat/create-function_call).
