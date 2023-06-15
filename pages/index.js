@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import useLLM from "usellm";
 
 import { Configuration, OpenAIApi } from 'openai';
 
@@ -17,14 +16,10 @@ export default function AIChatBot() {
     {
       role: "assistant",
       content:
-        "I'm a chatbot powered by the ChatGPT API and developed using useLLM. Ask me anything!",
+        "I'm a chatbot powered by the ChatGPT API. Ask me anything!",
     },
   ]);
   const [inputText, setInputText] = useState("");
-
-  const llm = useLLM({
-    serviceUrl: "https://usellm.org/api/llm", // For testing only. Follow this guide to create your own service URL: https://usellm.org/docs/api-reference/create-llm-service
-  });
 
   let messagesWindow = useRef(null);
 
